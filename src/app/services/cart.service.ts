@@ -7,11 +7,10 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 })
 
 export class CartService {
-  private cart: Map<number, number> = new Map<number, number>(); // Dùng Map để lưu trữ giỏ hàng, key là id sản phẩm, value là số lượng
+  private cart: Map<number, number> = new Map<number, number>(); 
   
 
-  constructor() {
-    // Lấy dữ liệu giỏ hàng từ localStorage khi khởi tạo service            
+  constructor() {         
     this.refreshCart()
   }
   public refreshCart(){
@@ -33,20 +32,16 @@ export class CartService {
   addToCart(productId: number, quantity: number): void {
     debugger
     if (this.cart.has(productId)) {
-      // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng lên `quantity`
       this.cart.set(productId, this.cart.get(productId)! + quantity);
     } else {
-      // Nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm vào với số lượng là `quantity`
       this.cart.set(productId, quantity);
     }
-     // Sau khi thay đổi giỏ hàng, lưu trữ nó vào localStorage
     this.saveCartToLocalStorage();
   }
   
   getCart(): Map<number, number> {
     return this.cart;
   }
-  // Lưu trữ giỏ hàng vào localStorage
   private saveCartToLocalStorage(): void {
     debugger
     window.localStorage.setItem(this.getCartKey(), JSON.stringify(Array.from(this.cart.entries())));
@@ -55,9 +50,8 @@ export class CartService {
     this.cart = cart ?? new Map<number, number>();
     this.saveCartToLocalStorage();
   }
-  // Hàm xóa dữ liệu giỏ hàng và cập nhật Local Storage
   clearCart(): void {
-    this.cart.clear(); // Xóa toàn bộ dữ liệu trong giỏ hàng
-    this.saveCartToLocalStorage(); // Lưu giỏ hàng mới vào Local Storage (trống)
+    this.cart.clear(); 
+    this.saveCartToLocalStorage(); 
   }
 }
