@@ -14,8 +14,8 @@ import { enviroment } from '../../enviroments/enviroment';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
-  categories: Category[] = []; // Dữ liệu động từ categoryService
-  selectedCategoryId: number  = 0; // Giá trị category được chọn
+  categories: Category[] = []; 
+  selectedCategoryId: number  = 0; 
   currentPage: number = 0;
   itemsPerPage: number = 12;
   pages: number[] = [];
