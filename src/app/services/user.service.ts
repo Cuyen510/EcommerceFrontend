@@ -57,9 +57,9 @@ export class UserService {
       if(userResponse == null || !userResponse) {
         return;
       }
-      // Convert the userResponse object to a JSON string
+    
       const userResponseJSON = JSON.stringify(userResponse);  
-      // Save the JSON string to local storage with a key (e.g., "userResponse")
+     
       window.localStorage.setItem('ecom-user', userResponseJSON);  
       console.log('User response saved to local storage.');
     } catch (error) {
