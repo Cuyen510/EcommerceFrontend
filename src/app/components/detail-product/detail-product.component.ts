@@ -119,7 +119,6 @@ export class DetailProductComponent implements OnInit {
     if (this.product) {
       this.cartService.addToCart(this.productId, this.quantity);
     } else {
-      // Xử lý khi product là null
       console.error('Không thể thêm sản phẩm vào giỏ hàng vì product là null.');
     }
   }  
