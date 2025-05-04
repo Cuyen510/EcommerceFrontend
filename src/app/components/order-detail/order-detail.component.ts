@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class OrderDetailComponent {
   orderResponse: OrderResponse = {
-    id: 0, // Hoặc bất kỳ giá trị số nào bạn muốn
+    id: 0, 
     user_id: 0,
     fullname: '',
     phone_number: '',
@@ -22,12 +22,12 @@ export class OrderDetailComponent {
     note: '',
     order_date: new Date(),
     status: '',
-    total_money: 0, // Hoặc bất kỳ giá trị số nào bạn muốn
+    total_money: 0, 
     shipping_method: '',
     shipping_address: '',
     shipping_date: new Date(),
     payment_method: '',
-    order_details: [] // Một mảng rỗng
+    order_details: [] 
   };  
   constructor(
     private orderService: OrderService,
