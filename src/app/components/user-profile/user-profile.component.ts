@@ -30,7 +30,7 @@ export class UserProfileComponent {
       retype_password: ['', [Validators.minLength(3)]], 
       date_of_birth: [Date.now()],      
     }, {
-      validators: this.passwordMatchValidator// Custom validator function for password match
+      validators: this.passwordMatchValidator
     });
   }
   
